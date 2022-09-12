@@ -1,2 +1,5 @@
+Numpy
 Flask
 gunicorn==19.3.0
+sklearn
+pandas

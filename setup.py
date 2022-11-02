@@ -12,7 +12,7 @@ REQUIREMENT_FILE_NAME  = "requirements.txt"
 
 def get_requirements_list()->List[str]:
     """
-    This function is going to return list of requirements
+    Description: This function is going to return list of requirements
     mentioned in requirements.txt file
 
     return - This function returns a list that contains libraries mentioned in the requirements.txt file
@@ -29,10 +29,7 @@ description= DESCRIPTION,
 packages= find_packages(),
 install_requires = get_requirements_list()
 
-
 )
 
-if __name__ == "__main__":
-    print(get_requirements_list())
-
-
+#if __name__ == "__main__":
+ #   print(get_requirements_list()) 

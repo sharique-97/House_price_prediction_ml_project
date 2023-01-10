@@ -27,7 +27,7 @@ class Configuration:
                 DATA_INGESTION_ARTIFACT_DIR,
                 self.time_stamp
             )
-            data_ingestion_info =  self.config_info.config_info['DATA_INGESTION__CONFIG_KEY']       
+            data_ingestion_info =  self.config_info[DATA_INGESTION_CONFIG_KEY]       
             
             dataset_download_url = data_ingestion_info[DATA_INGESTION_DOWNLOAD_URL_KEY]
             tgz_download_dir = os.path.join( 
@@ -38,17 +38,27 @@ class Configuration:
                 data_ingestion_artifact_dir,
                 data_ingestion_info[DATA_INGESTION_RAW_DATA_DIR_KEY]
             )
-            ingested_train_dir = 
-            ingested_test_dir = 
+            ingested_data_dir = os.path.join(
+                data_ingestion_artifact_dir,
+                data_ingestion_info[DATA_INGESTION_INGESTED_DIR_NAME_KEY]
+            )
+            ingested_train_dir = os.path.join(
+                ingested_data_dir,
+                data_ingestion_info[DATA_INGESTION_TRAIN_DIR_KEY]
+            )
+            ingested_test_dir = os.path.join(
+                ingested_data_dir,
+                data_ingestion_info[DATA_INGESTION_TEST_DIR_KEY]
+            )
 
 
             data_ingestion_config= DataIngestionConfig(
-            dataset_download_url=,
-            tgz_download_dir=, 
-            raw_data_dir=,
-            ingested_train_dir=,
-            ingested_test_dir=
-            )
+                dataset_download_url= dataset_download_url,
+                tgz_download_dir= tgz_download_dir, 
+                raw_data_dir= raw_data_dir,
+                ingested_train_dir= ingested_train_dir,
+                ingested_test_dir=  ingested_test_dir
+                )
             logging.info(f'Data Ingestion config:{data_ingestion_config}')
             return data_ingestion_config
 

@@ -1,7 +1,8 @@
 Numpy
 Flask
 gunicorn==19.3.0
-sklearn
+scikit-learn
 pandas
 PyYAML
+six
 -e .

@@ -72,7 +72,7 @@ class DataIngestion:
             housing_dataframe= pd.read_csv(housing_file_path)
             housing_dataframe['income_cat'] = pd.cut(
                 housing_dataframe['median_income'],
-                bins = [0.0,1.5,3.0,4.5,6.0,np.inf]
+                bins = [0.0,1.5,3.0,4.5,6.0,np.inf],
                 labels = [1,2,3,4,5]
             )
 
@@ -114,9 +114,8 @@ class DataIngestion:
                                   is_ingested=True,
                                   message= f"Data Ingestion completed successfully."
                                   )
-            logging.info(f"Data Ingestion artifact:[{data_ingestion_artifact}]")
+            logging.info(f"Data Ingestion artifact:{data_ingestion_artifact}")
             return data_ingestion_artifact
-
 
         except Exception as e:
             raise HousingException(e,sys) from e

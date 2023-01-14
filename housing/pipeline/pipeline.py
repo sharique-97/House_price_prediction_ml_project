@@ -44,9 +44,8 @@ class Pipeline:
     def run_pipeline(self):
         try:
             #data ingestion 
-            logging.info()
+            
             data_ingestion_artifact = self.start_data_ingestion()
-
 
             
         except Exception as e:

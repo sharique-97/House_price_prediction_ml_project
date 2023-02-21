@@ -4,7 +4,6 @@ grid_search:
   params:
     cv: 5
     verbose: 2
-
 model_selection:
   module_0:
     class: LinearRegression
@@ -13,32 +12,13 @@ model_selection:
       fit_intercept: true
     search_param_grid:
       fit_intercept:
-        - true
-        - false
-
-
+      - true
+      - false
   module_1:
     class: RandomForestRegressor
     module: sklearn.ensemble
     params:
-      min_samples_leaf: 2
+      min_samples_leaf: 3
     search_param_grid:
-      min_sample_leaf:
-        - 4
-        - 6
-        - 12
-        n_estimators:
-          - 100
-          - 200  
-        bootstrap:
-          - true
-          - false
-        oob_score:
-          - true
-          - false
-        max_depth:
-        -2
-        -4
-        -6
-         
-
+      min_samples_leaf:
+      - 6

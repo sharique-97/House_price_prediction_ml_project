@@ -121,7 +121,7 @@ def evaluate_regression_model(model_list: list, X_train:np.ndarray, y_train:np.n
 
 
 def get_sample_model_config_yaml_file(export_dir: str):
-    try:
+     try:
         model_config = {
             GRID_SEARCH_KEY: {
                 MODULE_KEY: "sklearn.model_selection",
@@ -152,9 +152,8 @@ def get_sample_model_config_yaml_file(export_dir: str):
         with open(export_file_path, 'w') as file:
             yaml.dump(model_config, file)
         return export_file_path
-    except Exception as e:
-        raise HousingException(e, sys)
-
+     except Exception as e:
+        raise HousingException(e, sys) from e
 
 class ModelFactory:
     def __init__(self, model_config_path: str = None,):
